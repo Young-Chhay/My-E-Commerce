@@ -1,0 +1,25 @@
+# E-commerce Project - E-Shopping 🌟🌌
+## This Project is a modify starter code to build back end for Internet retail, also known as e-commerce. It will be used to Store, create, update, delete data from the table. For this application, it will use Express.js, Sequelize, .ENV for secure sensitive data. Since this application won't be deployed, A video demo walk through on the project can be found below.
+---
+___
+## Goal of this Project  
+* Modify starter codes. 
+* connect to a database using Sequelize
+* USE schema and seed commands to create database and seed data with provided data. 
+* linking routes path in SERVER.js to API folder and setup connection. 
+* Display data for the routes using API GET routes in Insomnia for categories, products, or tags.
+* test API POST, PUT, and DELETE routes in Insomnia. 
+---
+___
+
+# Project Content
+
+## 🌟[Repo: E-Commerce](https://github.com/Young-Chhay/Flash-Notes-Taker "Github Page")
+
+## 🌟 Display DATA API GET routes categories, products, or tags.
+
+
+## 🌟 Deleting notes 
+
+---
+___
