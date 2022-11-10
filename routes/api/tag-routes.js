@@ -34,17 +34,17 @@ router.get('/:id', (req, res) => {
 })
   .catch((err) => {
     console.log(err);
-    res.status(500).json(err);
+    res.status(404).json(err);
   });
 });
 
 router.post('/', (req, res) => {
   // create a new tag
   Tag.create(req.body)
-  .then((newTag) => res.json(TagsData))
+  .then((newTag) => res.json(newTag))
   .catch((err) => {
     console.log(err);
-    res.status(500).json(err);
+    res.status(404).json(err);
   });
 });
 
@@ -53,16 +53,16 @@ router.put('/:id', (req, res) => {
   Tag.update(req.body,{
     where: {id: req.params.id,}
   })
-  .then(UpdateTagData => {
+  .then((UpdateTagData) => {
     if (!UpdateTagData) {
         res.status(404).json({ message: 'No car found with this id' });
         return;
     }
-    res.json(dbCarData);
+    res.json(UpdateTagData);
 })
   .catch(err => {
     console.log(err);
-    res.status(500).json(err);
+    res.status(404).json(err);
   }); 
 });
 

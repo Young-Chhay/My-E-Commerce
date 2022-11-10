@@ -41,7 +41,7 @@ router.get('/:id', (req, res) => {
       }
     ],
   })
-    .then(ProductData => {
+    .then((ProductData) => {
       if (!ProductData) {
         res.status(404).json({ message: 'No category found with this id'});
         return;
@@ -94,7 +94,7 @@ router.put('/:id', (req, res) => {
       id: req.params.id,
     },
   })
-    .then((product) => {
+    .then((ProductTag) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });
     })
@@ -110,7 +110,7 @@ router.put('/:id', (req, res) => {
             tag_id,
           };
         });
-      // figure out which ones to remove
+      // find tag_id and remove it 
       const productTagsToRemove = productTags
         .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
         .map(({ id }) => id);
@@ -121,7 +121,7 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then((updatedProductTags) => res.json(updatedProductTags))
+    .then((productTags) => res.json(productTags))
     .catch((err) => {
       // console.log(err);
       res.status(400).json(err);
